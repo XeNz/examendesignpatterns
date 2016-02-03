@@ -36,8 +36,19 @@ public class Negative implements State{
 		default:
 			break;
 		}
-		magic8ball.getInstance().setLastResponse(choice);
-		System.out.println(response);
+		//check of response al in lijst zit
+		if(!magic8ball.getInstance().getLastResponses().contains(choice))
+		{
+			if(magic8ball.getInstance().getLastResponses().size() == 10){
+				magic8ball.getInstance().getLastResponses().remove(0);
+			}
+			magic8ball.getInstance().addLastResponse(choice);
+			System.out.println(response);
+		}
+		else
+		{
+			roll();
+		}
 	}
 
 }

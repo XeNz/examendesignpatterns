@@ -50,8 +50,17 @@ public class Positive implements State{
 		default:
 			break;
 		}
-		magic8ball.getInstance().setLastResponse(choice);
-		System.out.println(response);
+		
+		//check of response al in lijst zit
+		if(!magic8ball.getInstance().getLastResponses().contains(choice))
+		{
+			magic8ball.getInstance().addLastResponse(choice);
+			System.out.println(response);
+		}
+		else
+		{
+			roll();
+		}
 	}
 
 }
