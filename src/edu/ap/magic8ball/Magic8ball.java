@@ -47,12 +47,34 @@ public class Magic8ball {
 		}
 	}
 	
-	private void askQuestion() throws IOException{
+	public void askOneQuestion(){
 		System.out.println("Give me a question and I will answer");	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String question = br.readLine();
+		try {
+			String question = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Magic8ball.getInstance().currentState = pickCurrentState();
 		Magic8ball.getInstance().currentState.roll();
+	}
+	public void askQuestions(){
+		Boolean again = true;
+		while (again) {
+			askOneQuestion();
+			System.out.println("again Y or N?");	
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+			try {
+				String againOrNot = br2.readLine();
+				if(againOrNot.equalsIgnoreCase("n")){
+					again = false;
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	public void addLastResponse(Integer choice){
