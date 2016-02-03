@@ -1,0 +1,18 @@
+Architectuur vraag design patterns
+
+1.Welke belangrijke tradeoffs zijn er gemaakt?
+
+Om het simpel en 'goedkoop' te houden had OGRS er voor gekozen om de klantendata niet expliciet bij te houden. Men heeft er ook voor gekozen om de sales status reports manueel op rustige periodes na te kijken om zo de snelheid van de webshop niet te hinderen.
+
+
+2.Waar zit het grootste riciso in deze architectuur?
+
+Zoals gezien in de case study, is het grote probleem het bijhouden van de klantendata. OGRS focuste zich vooral op het bijhouden van catalogus data. Als men de klantendata wil bijhouden, verhoogt de kost omdat men hiervoor bijkomende integration layers voor moet aanmaken. Als men deze integration layers zou aanmaken zou men bijvoorbeeld de klantendata vanuit de orders van OGRS kunnen halen ofwel de klanten rechtstreeks bij TBW zich laten aanmelden.
+
+3.Met welke crosscutting concerns zijn er rekening gehouden?
+
+Voor de business layer, hebben de eigenaars een object-gëorienteerd design gekozen. Ze dachten een business rule engine te gebruiken maar dat leek overkill voor hun operaties. Ook gebruiken ze een third-party Accounting App van een vorige business ondernemening om zo de kosten te verlagen.
+
+4.Hoe zou je logging in deze applicatie implementeren?
+
+Ik zou per Application Layer proberen loggen, alhoewel dit misschien niet overal mogelijk is. Bij de third-party Accounting App bijvoorbeeld zal het moeilijk zijn om zelf logging te implementeren, hopelijk wordt er al in deze app aan logging gedaan aangezien het een accounting app is en deze met boekhouding te maken heeft.

@@ -34,7 +34,8 @@ public class Magic8ball {
 	
 	private State pickCurrentState(){
 		Random rnd = new Random();
-		int currentStateValue = rnd.nextInt(2);
+		//fixed to include neutral :)
+		int currentStateValue = rnd.nextInt(3);
 		switch (currentStateValue) {
 		case 0:
 			return Magic8ball.getInstance().positiveState;
@@ -63,12 +64,13 @@ public class Magic8ball {
 		Boolean again = true;
 		while (again) {
 			askOneQuestion();
-			System.out.println("again Y or N?");	
+			System.out.println(">Again Y or N?");	
 			BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
 			try {
 				String againOrNot = br2.readLine();
 				if(againOrNot.equalsIgnoreCase("n")){
 					again = false;
+					System.out.println("No more questions for you mister!");
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

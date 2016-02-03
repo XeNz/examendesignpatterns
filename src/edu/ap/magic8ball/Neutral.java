@@ -34,6 +34,7 @@ public class Neutral implements State{
 			response = "Concentrate and ask again";
 			break;
 		default:
+			response = "";
 			break;
 		}
 		//check of response al in lijst zit

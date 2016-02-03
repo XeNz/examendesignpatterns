@@ -34,6 +34,7 @@ public class Negative implements State{
 			response = "Very doubtful";
 			break;
 		default:
+			response = "";
 			break;
 		}
 		//check of response al in lijst zit

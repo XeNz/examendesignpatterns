@@ -17,37 +17,38 @@ public class Positive implements State{
 		String response = "";
 		
 		switch (choice) {
-		case 0:
+		case 1:
 			response = "It is certain";
 			break;
-		case 1:
+		case 2:
 			response = "It is decidedly so";
 			break;
-		case 2:
+		case 3:
 			response = "Without a doubt";
 			break;
-		case 3:
+		case 4:
 			response = "Yes, definitely";
 			break;
-		case 4:
+		case 5:
 			response = "You may rely on it";
 			break;
-		case 5:
+		case 6:
 			response = "As I see it, yes";
 			break;
-		case 6:
+		case 7:
 			response = "Outlook good";
 			break;
-		case 7:
+		case 8:
 			response = "Most likely";
 			break;
-		case 8:
+		case 9:
 			response = "Yes";
 			break;
-		case 9:
+		case 10:
 			response = "Signs point to yes";
 			break;
 		default:
+			response = "";
 			break;
 		}
 		
@@ -60,6 +61,7 @@ public class Positive implements State{
 		else
 		{
 			roll();
+			
 		}
 	}
 
